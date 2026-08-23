@@ -1,0 +1,44 @@
+# Ce depot n avait aucun filet. Sans lui, un fichier de secrets ou de configuration
+# locale depose dans le dossier de travail part au premier "git add ." sans que
+# personne le voie. Ce fichier ne remplace pas le scan de secrets : il evite
+# l accident, le scan attrape ce qui passe quand meme.
+
+# --- secrets et configuration locale (jamais dans Git) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+credentials.json
+client_secret*.json
+service-account*.json
+pof-config.json
+secrets.json
+*.secret
+.doppler.yaml
+
+# --- caches et dependances ---
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- sorties de travail (a regenerer, jamais a versionner) ---
+*.log
+tmp/
+.tmp/
+out/
+dist/
+build/
+
+# --- fichiers systeme ---
+.DS_Store
+Thumbs.db
+desktop.ini
